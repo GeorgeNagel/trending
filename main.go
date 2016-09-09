@@ -26,6 +26,32 @@ func meme_handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Phrase: %s. Price: $%v", m1.phrase, m1.price)
 }
 
+// func get_user() {
+// 	conn := util.Connect("connect test")
+// 	defer conn.Close()
+// 	var username string
+// 	var password string
+// 	var id int64 = 1
+// 	var balance int64
+// 	err := conn.QueryRow(`
+//     select username,
+//            password,
+//            balance
+//       from users
+//      where id = $1`, id).Scan(&username, &password, &balance)
+// 	if err != nil {
+// 		if err == pgx.ErrNoRows {
+// 			fmt.Fprintf(os.Stderr, "User with id %s not found.\n", id)
+// 		} else {
+// 			fmt.Fprintf(os.Stderr, "Unexpected error trying to find user: %v\n", err)
+// 		}
+// 		os.Exit(1)
+// 	}
+
+// 	fmt.Printf("Found user %s %s\n", username, password)
+// 	fmt.Printf("Connection worked!\n")
+// }
+
 // // Get the content string at a url
 // func body_for_url(url string) string {
 // 	resp, err := http.Get(url)
