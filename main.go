@@ -26,6 +26,10 @@ func meme_handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Phrase: %s. Price: $%v", m1.phrase, m1.price)
 }
 
+func insert_user(username, password string) (user_id int, err error) {
+	return 1, nil
+}
+
 // func get_user() {
 // 	conn := util.Connect("connect test")
 // 	defer conn.Close()
