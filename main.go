@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	// "io/ioutil"
 	"net/http"
 )
 
@@ -26,13 +26,13 @@ func meme_handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Phrase: %s. Price: $%v", m1.phrase, m1.price)
 }
 
-// Get the content string at a url
-func body_for_url(url string) string {
-	resp, err := http.Get(url)
-	if err != nil {
-		fmt.Println("No good")
-	}
-	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
-	return string(body)
-}
+// // Get the content string at a url
+// func body_for_url(url string) string {
+// 	resp, err := http.Get(url)
+// 	if err != nil {
+// 		fmt.Println("No good")
+// 	}
+// 	defer resp.Body.Close()
+// 	body, err := ioutil.ReadAll(resp.Body)
+// 	return string(body)
+// }
